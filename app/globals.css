@@ -1,0 +1,92 @@
+@import url(../public/assets/css/tobii.min.css);
+@import url(../public/assets/css/materialdesignicons.min.css);
+@import url(../public/assets/css/tailwind.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #ffffff00;
+  /* padding: 40px; */
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper3 {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+/* rodal-dialog */
+.rodal-dialog {
+  width: 1000px !important;
+  height: 650px !important;
+}
+
+@media (max-width: 760px) {
+  .rodal-dialog {
+    width: 350px !important;
+    height: 300px !important;
+    padding: 10px !important;
+  }
+}
+
+/* rodal-dialog */
+/* topnav */
+.sub-menu-item:hover {
+  color: #a855f7 !important
+}
+
+.sub-menu-item:active {
+  color: #a855f7 !important
+}
+
+#topnav .navigation-menu>li>a:hover,
+#topnav .navigation-menu>li>a:active {
+  color: #a855f7 !important
+}
+
+.sub-menu-item:focus {
+  color: #a855f7 !important
+}
+
+.responsive-nav {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  #topnav {
+    display: none !important;
+  }
+
+  .responsive-nav {
+    display: block !important;
+  }
+}
+
+/* topnav */
