@@ -70,6 +70,10 @@ body {}
 
 /* rodal-dialog */
 /* topnav */
+.nav-active {
+  color: #a855f7 !important
+}
+
 .sub-menu-item:hover {
   color: #a855f7 !important
 }

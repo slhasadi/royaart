@@ -10,17 +10,12 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 const SinglePortfolio = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [singleCar, setSingleCar] = useState<any>([
-    "/assets/images/portfolio/10.jpg",
     "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/13.jpg",
-    "/assets/images/portfolio/7.jpg",
-    "/assets/images/portfolio/2.jpg",
-    "/assets/images/portfolio/6.jpg",
-    "/assets/images/portfolio/12.jpg",
-    "/assets/images/portfolio/11.jpg",
-    "/assets/images/portfolio/1.jpg",
-    "/assets/images/portfolio/15.jpg",
-    "/assets/images/portfolio/16.jpg",
+    "/assets/images/portfolio/18.jpg",
+    "/assets/images/portfolio/18.jpg",
+    "/assets/images/portfolio/18.jpg",
+    "/assets/images/portfolio/18.jpg",
+    "/assets/images/portfolio/18.jpg",
   ]);
   const thumbSlider = () => {
     return (

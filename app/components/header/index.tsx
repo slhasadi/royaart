@@ -1,9 +1,16 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [path, setPath] = useState("");
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setPath(pathname.split("/")[1]);
+  }, [pathname]);
   return (
     <>
       <nav id="topnav" className="defaultscroll bg-[#0000004d] is-sticky">
@@ -11,31 +18,64 @@ const Header = () => {
           <div id="navigation">
             <ul className="navigation-menu justify-end">
               <li className="has-submenu parent-menu-item">
-                <Link className="sub-menu-item" href="/">
+                <Link
+                  className={
+                    path == "" ? "sub-menu-item nav-active" : "sub-menu-item"
+                  }
+                  href="/"
+                >
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link className="sub-menu-item" href="/aboutus">
+                <Link
+                  className={
+                    path == "aboutus"
+                      ? "sub-menu-item nav-active"
+                      : "sub-menu-item"
+                  }
+                  href="/aboutus"
+                >
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link className="sub-menu-item" href="/shop">
+                <Link
+                  className={
+                    path == "shop"
+                      ? "sub-menu-item nav-active"
+                      : "sub-menu-item"
+                  }
+                  href="/shop"
+                >
                   Shop
                 </Link>
               </li>
 
               <li className="has-submenu parent-parent-menu-item">
-                <Link className="sub-menu-item" href="/portfolio-list">
+                <Link
+                  className={
+                    path == "portfolio-list"
+                      ? "sub-menu-item nav-active"
+                      : "sub-menu-item"
+                  }
+                  href="/portfolio-list"
+                >
                   Portfolio
                 </Link>
               </li>
 
               <li>
-                <Link className="sub-menu-item" href="/contactus">
+                <Link
+                  className={
+                    path == "contactus"
+                      ? "sub-menu-item nav-active"
+                      : "sub-menu-item"
+                  }
+                  href="/contactus"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -88,31 +128,64 @@ const Header = () => {
               md:pt-0"
               >
                 <li className="has-submenu parent-menu-item py-3">
-                  <Link className="sub-menu-item" href="/">
+                  <Link
+                    className={
+                      path == "" ? "sub-menu-item nav-active" : "sub-menu-item"
+                    }
+                    href="/"
+                  >
                     Home
                   </Link>
                 </li>
 
                 <li className="py-3">
-                  <Link className="sub-menu-item" href="/aboutus">
+                  <Link
+                    className={
+                      path == "aboutus"
+                        ? "sub-menu-item nav-active"
+                        : "sub-menu-item"
+                    }
+                    href="/aboutus"
+                  >
                     About Us
                   </Link>
                 </li>
 
                 <li className="py-3">
-                  <Link className="sub-menu-item" href="/shop">
+                  <Link
+                    className={
+                      path == "shop"
+                        ? "sub-menu-item nav-active"
+                        : "sub-menu-item"
+                    }
+                    href="/shop"
+                  >
                     Shop
                   </Link>
                 </li>
 
                 <li className="has-submenu parent-parent-menu-item py-3">
-                  <Link className="sub-menu-item" href="/portfolio-list">
+                  <Link
+                    className={
+                      path == "portfolio-list"
+                        ? "sub-menu-item nav-active"
+                        : "sub-menu-item"
+                    }
+                    href="/portfolio-list"
+                  >
                     Portfolio
                   </Link>
                 </li>
 
                 <li className="py-3">
-                  <Link className="sub-menu-item" href="/contactus">
+                  <Link
+                    className={
+                      path == "contactus"
+                        ? "sub-menu-item nav-active"
+                        : "sub-menu-item"
+                    }
+                    href="/contactus"
+                  >
                     Contact Us
                   </Link>
                 </li>
