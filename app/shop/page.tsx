@@ -19,7 +19,7 @@ const Shop = () => {
             </h3>
 
             <p className="text-white/70 text-base max-w-xl mx-auto">
-              Showcase of Our Awesome Works in Four Columns
+              Showcase of Our Awesome Works in Four Columns SLH
             </p>
           </div>
         </div>
