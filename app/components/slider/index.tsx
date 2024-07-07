@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import Image from "next/image";
 const Slider = () => {
   return (
     <>
@@ -10,18 +11,20 @@ const Slider = () => {
             <Swiper
               centeredSlides={true}
               autoplay={{
-                delay: 2000,
+                delay: 500000,
                 disableOnInteraction: false,
               }}
               modules={[Autoplay]}
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className="w-full relative">
-                  <img
-                    src="assets/images/home1.png"
+                <div className="w-full h-[100vh] relative">
+                  <Image
+                    src="/assets/images/home1.png"
                     alt=""
                     className="w-full"
+                    layout="fill"
+                    objectFit="cover"
                   />
                   <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
                     <p className="text-[18px] md:text-[45px] text-[#fff]">
@@ -34,11 +37,13 @@ const Slider = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="w-full relative">
-                  <img
-                    src="assets/images/home2.png"
+                <div className="w-full h-[100vh] relative">
+                  <Image
+                    src="/assets/images/home2.png"
                     alt=""
                     className="w-full"
+                    layout="fill"
+                    objectFit="cover"
                   />
                   <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
                     <p className="text-[18px] md:text-[45px] text-[#fff]">
@@ -51,11 +56,13 @@ const Slider = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="w-full relative">
-                  <img
-                    src="assets/images/home3.png"
+                <div className="w-full h-[100vh] relative">
+                  <Image
+                    src="/assets/images/home3.png"
                     alt=""
                     className="w-full"
+                    layout="fill"
+                    objectFit="cover"
                   />
                   <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
                     <p className="text-[18px] md:text-[45px] text-[#fff]">
