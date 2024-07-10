@@ -11,7 +11,7 @@ const PortfolioListPage = () => {
     <>
       <Header />
       <section className="relative table w-full pt-24 pb-32  bg-no-repeat bg-top bg-cover">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black gradient-pink-to-white"></div>
         <div className="container relative">
           <div className="grid grid-cols-1 pb-8 text-center mt-10">
             <h3 className="mb-3 text-3xl leading-normal font-medium text-white">
@@ -26,20 +26,20 @@ const PortfolioListPage = () => {
 
         <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
           <ul className="tracking-[0.5px] mb-0 inline-block">
-            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white">
+            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
               <a href="index.html">Muvico</a>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
-              <i className="mdi mdi-chevron-right align-middle"></i>
+              <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
             </li>
-            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white">
+            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
               <a href="">Portfolio</a>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
-              <i className="mdi mdi-chevron-right align-middle"></i>
+              <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
             </li>
             <li
-              className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white"
+              className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color"
               aria-current="page"
             >
               Creative
