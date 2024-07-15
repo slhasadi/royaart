@@ -44,7 +44,7 @@ const VideoSection = () => {
               <span className="relative">
                 Agency
                 <img
-                  src="assets/images/arrow.png"
+                  src="/assets/images/arrow.png"
                   className="w-full absolute end-0 block -rotate-[15deg] top-4 -z-1 opacity-70"
                   alt=""
                 />
@@ -62,7 +62,7 @@ const VideoSection = () => {
               <div className="grid grid-cols-1 md:text-start text-center justify-center">
                 <div className="relative">
                   <img
-                    src="assets/images/bg/1.jpg"
+                    src="/assets/images/bg/1.jpg"
                     className="rounded-xl shadow-lg"
                     alt=""
                   />

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Header from "@/app/components/header";
@@ -7,16 +7,21 @@ import Zoom from "react-medium-image-zoom";
 
 import "react-medium-image-zoom/dist/styles.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-const SingleShop = () => {
+import { findProduct, getGalleryProduct } from "@/app/network";
+import { IMAGE_URL } from "@/app/global";
+import Link from "next/link";
+const SingleShop = ({ params }: { params: { id: any } }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-  const [singleCar, setSingleCar] = useState<any>([
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-  ]);
+  const [sliderList, setSliderList] = useState<any>([]);
+  const [singleProduct, setSingleProduct] = useState([] as any);
+  useEffect(() => {
+    findProduct(params.id).then((res) => {
+      setSingleProduct(res.data);
+    });
+    getGalleryProduct(params.id).then((res) => {
+      setSliderList(res.data);
+    });
+  }, []);
   const thumbSlider = () => {
     return (
       <div className="w-full">
@@ -28,12 +33,12 @@ const SingleShop = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2"
           >
-            {singleCar.map((slider: string, index: number) => {
+            {sliderList.map((slider: any, index: number) => {
               return (
                 <SwiperSlide key={index}>
                   <Zoom>
                     <img
-                      src={`${slider}`}
+                      src={IMAGE_URL + slider.imagePath + slider.imageName}
                       style={{ width: "100%", height: "400px" }}
                       alt={slider}
                     />
@@ -53,11 +58,11 @@ const SingleShop = () => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper3"
           >
-            {singleCar.map((slider: string, index: number) => {
+            {sliderList.map((slider: any, index: number) => {
               return (
                 <SwiperSlide key={index}>
                   <img
-                    src={`${slider}`}
+                    src={IMAGE_URL + slider.imagePath + slider.imageName}
                     style={{ width: "100%", height: "70px" }}
                     alt={slider}
                   />
@@ -89,13 +94,13 @@ const SingleShop = () => {
         <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
           <ul className="tracking-[0.5px] mb-0 inline-block">
             <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="index.html">Muvico</a>
+              <Link href="/">Main</Link>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
               <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
             </li>
             <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="">Portfolio</a>
+              <Link href="/shop">Product List</Link>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
               <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
@@ -104,7 +109,7 @@ const SingleShop = () => {
               className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color"
               aria-current="page"
             >
-              Creative
+              Single Product
             </li>
           </ul>
         </div>
@@ -117,22 +122,10 @@ const SingleShop = () => {
               <div className="flex mt-6">
                 <div className="w-full">
                   <h4 className="text-3xl leading-normal font-semibold mb-6">
-                    Project Description
+                    Product Description
                   </h4>
                   <p className="text-slate-900 dark:text-black/60">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Suscipit totam atque dignissimos porro, exercitationem,
-                    neque alias ea aliquid quibusdam voluptates impedit maxime
-                    aut asperiores consequatur iste. Corporis fuga ducimus
-                    dignissimos. Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Adipisci non dolorem consequatur vitae
-                    hic.
-                  </p>
-                  <p className="text-slate-100 dark:text-black/60 mt-2">
-                    Suscipit totam atque dignissimos porro, exercitationem,
-                    neque alias ea aliquid quibusdam voluptates impedit maxime
-                    aut asperiores consequatur iste. Corporis fuga ducimus
-                    dignissimos.
+                    {singleProduct.description}
                   </p>
                 </div>
               </div>
@@ -141,32 +134,17 @@ const SingleShop = () => {
             <div className="lg:col-span-4 md:col-span-5">
               <div className="sticky top-20">
                 <h5 className="text-lg font-semibold bg-slate-300 dark:bg-slate-300 shadow dark:shadow-gray-300 rounded-xl p-2 text-center">
-                  Project Info :
+                  Product Info :
                 </h5>
                 <dl className="grid grid-cols-12 mb-0 mt-4">
-                  <dt className="md:col-span-4 col-span-5 mt-2">Client :</dt>
+                  <dt className="md:col-span-4 col-span-5 mt-2">Title :</dt>
                   <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    Calvin Carlo
+                    {singleProduct.title}
                   </dd>
 
-                  <dt className="md:col-span-4 col-span-5 mt-2">Category :</dt>
+                  <dt className="md:col-span-4 col-span-5 mt-2">Price :</dt>
                   <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    Web Design
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Date :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    23rd Sep, 2021
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Website :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    www.yourdomain.com
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Location :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    3/2/64 Mongus Street, UK
+                    {singleProduct.price + " " + "Toman"}
                   </dd>
                 </dl>
               </div>

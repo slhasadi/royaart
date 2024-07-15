@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
+import { getAllSlider } from "@/app/network";
+import { IMAGE_URL } from "@/app/global";
+
 const Slider = () => {
+  const [slideList, setSlideList] = useState([] as any);
+  useEffect(() => {
+    getAllSlider().then((res) => {
+      setSlideList(res.data);
+    });
+  }, []);
   return (
     <>
       <section className="relative overflow-hidden md:flex md:h-screen py-0 pt-[60px] md:py-36 items-center">
@@ -11,69 +20,36 @@ const Slider = () => {
             <Swiper
               centeredSlides={true}
               autoplay={{
-                delay: 500000,
+                delay: 5000,
                 disableOnInteraction: false,
               }}
               modules={[Autoplay]}
               className="mySwiper"
             >
-              <SwiperSlide>
-                <div className="w-full h-[100vh] relative">
-                  <Image
-                    src="/assets/images/home1.png"
-                    alt=""
-                    className="w-full"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
-                    <p className="text-[18px] md:text-[45px] text-[#fff]">
-                      Roya Moradkhani
-                    </p>
-                    <p className="text-[14px] md:text-[25px] text-[#fff]">
-                      Photographer
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full h-[100vh] relative">
-                  <Image
-                    src="/assets/images/home2.png"
-                    alt=""
-                    className="w-full"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
-                    <p className="text-[18px] md:text-[45px] text-[#fff]">
-                      Roya Moradkhani
-                    </p>
-                    <p className="text-[14px] md:text-[25px] text-[#fff]">
-                      Photographer
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full h-[100vh] relative">
-                  <Image
-                    src="/assets/images/home3.png"
-                    alt=""
-                    className="w-full"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
-                    <p className="text-[18px] md:text-[45px] text-[#fff]">
-                      Roya Moradkhani
-                    </p>
-                    <p className="text-[14px] md:text-[25px] text-[#fff]">
-                      Photographer
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
+              {slideList.map((slide: any) => {
+                return (
+                  <SwiperSlide key={slide.slidSlideShowId}>
+                    <div className="w-full h-[100vh] relative">
+                      <img
+                        src={IMAGE_URL + slide.imagePath + slide.imageName}
+                        alt=""
+                        className="w-full"
+                        loading="lazy"
+                        // fill
+                        // objectFit="cover"
+                      />
+                      <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
+                        <p className="text-[18px] md:text-[45px] text-[#fff]">
+                          {slide.title}
+                        </p>
+                        <p className="text-[14px] md:text-[25px] text-[#fff]">
+                          Photographer
+                        </p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
 
             <div className="defaultscroll is-sticky absolute bottom-[10px] md:bottom-[100px] z-50 right-0">
@@ -86,7 +62,7 @@ const Slider = () => {
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="assets/images/instagram.png"
+                          src="/assets/images/instagram.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />
@@ -98,7 +74,7 @@ const Slider = () => {
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="assets/images/pinterest.png"
+                          src="/assets/images/pinterest.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />
@@ -110,7 +86,7 @@ const Slider = () => {
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="assets/images/telegram.png"
+                          src="/assets/images/telegram.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />
@@ -122,7 +98,7 @@ const Slider = () => {
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="assets/images/whatsapp.png"
+                          src="/assets/images/whatsapp.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />

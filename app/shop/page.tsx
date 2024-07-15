@@ -1,12 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/header";
 import Link from "next/link";
+import { getAllProduct } from "../network";
+import { IMAGE_URL } from "../global";
 
 const Shop = () => {
-  const [mapItem, setMapItem] = useState([
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
-  ]);
+  const [portList, setPortList] = useState([]);
+  useEffect(() => {
+    getAllProduct().then((res) => {
+      setPortList(res.data);
+    });
+  }, []);
   return (
     <div>
       <Header />
@@ -27,22 +32,13 @@ const Shop = () => {
         <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
           <ul className="tracking-[0.5px] mb-0 inline-block">
             <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="index.html">Muvico</a>
+              <Link href="/">Main</Link>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
               <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
             </li>
-            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="">Portfolio</a>
-            </li>
-            <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
-              <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
-            </li>
-            <li
-              className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color"
-              aria-current="page"
-            >
-              Creative
+            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color">
+              Shop
             </li>
           </ul>
         </div>
@@ -54,7 +50,7 @@ const Shop = () => {
             id="grid"
             className="md:flex flex-wrap w-full justify-center mx-auto mt-4"
           >
-            {mapItem.map((item: any) => {
+            {portList.map((item: any) => {
               return (
                 <div
                   key={item}
@@ -64,22 +60,22 @@ const Shop = () => {
                   <div className="group relative block rounded-xl duration-700 ease-in-out">
                     <div className="relative overflow-hidden rounded-xl">
                       <img
-                        src="/assets/images/portfolio/1.jpg"
-                        className="rounded-xl"
+                        src={IMAGE_URL + item.imagePath + item.imageName}
+                        className="rounded-xl shop-image"
                         alt=""
                       />
                     </div>
                     <div className="content duration-700 ease-in-out">
                       <div className="bg-white dark:bg-slate-900 p-4 rounded-xl absolute z-10 bottom-3 start-3 duration-700 ease-in-out scale-0 group-hover:scale-100">
                         <Link
-                          href="/shop/1"
+                          href={`/shop/${item.productId}`}
                           className="h6 text-[15px] font-medium text-white hover:text-orange-500 duration-500 ease-in-out"
                         >
-                          Mockup Collection
+                          {item.title}
                         </Link>
 
                         <p className="text-slate-400 dark:text-white/60 mb-0">
-                          Abstract
+                          {item.price + " " + "Toman"}
                         </p>
                       </div>
                     </div>

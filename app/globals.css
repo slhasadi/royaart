@@ -129,3 +129,35 @@ body {}
   font-size: 42px;
   color: #fff;
 }
+
+.shop-image {
+  width: 250px;
+  height: 230px;
+}
+
+.product-img {
+  width: 350px !important;
+  height: 350px !important;
+}
+
+.product2-img {
+  width: 410px !important;
+  height: 410px !important;
+}
+
+@media (max-width: 760px) {
+  .shop-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .product-img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .product2-img {
+    width: 225px !important;
+    height: 225px !important;
+  }
+}

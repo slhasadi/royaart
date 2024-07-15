@@ -1,7 +1,36 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Header from "../components/header";
+import { registerContactUs } from "../network";
+import Link from "next/link";
 
 const Contactus = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [comment, setComment] = useState("");
+  const onChanageName = (e: any) => {
+    setName(e.target.value);
+  };
+  const onChanageEmail = (e: any) => {
+    setEmail(e.target.value);
+  };
+  const onChanageSubject = (e: any) => {
+    setSubject(e.target.value);
+  };
+  const onChanageComment = (e: any) => {
+    setComment(e.target.value);
+  };
+  const handleSubmit = () => {
+    const data = {
+      CustomerName: name,
+      Email: email,
+      Subject: subject,
+      Comment: comment,
+    };
+    registerContactUs(data).then(() => {});
+  };
+
   return (
     <>
       <Header />
@@ -22,22 +51,13 @@ const Contactus = () => {
         <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
           <ul className="tracking-[0.5px] mb-0 inline-block">
             <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="index.html">Muvico</a>
+              <Link href="/">Main</Link>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
               <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
             </li>
-            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="">Portfolio</a>
-            </li>
-            <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
-              <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
-            </li>
-            <li
-              className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color"
-              aria-current="page"
-            >
-              Creative
+            <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color">
+              Contact Us
             </li>
           </ul>
         </div>
@@ -46,7 +66,7 @@ const Contactus = () => {
         <div className="container relative">
           <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
             <div className="lg:col-span-7 md:col-span-6">
-              <img src="assets/images/contact.svg" alt="" />
+              <img src="/assets/images/contact.svg" alt="" />
             </div>
 
             <div className="lg:col-span-5 md:col-span-6">
@@ -73,6 +93,7 @@ const Contactus = () => {
                           type="text"
                           className="form-input w-full py-2 px-3 h-10 bg-transparent border border-inherit dark:border-gray-200 dark:bg-slate-100 dark:text-slate-200 rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
                           placeholder="Name :"
+                          onChange={(e: any) => onChanageName(e)}
                         />
                       </div>
 
@@ -89,6 +110,7 @@ const Contactus = () => {
                           type="email"
                           className="form-input w-full py-2 px-3 h-10 bg-transparent border border-inherit dark:border-gray-200 dark:bg-slate-100 dark:text-slate-200 rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
                           placeholder="Email :"
+                          onChange={(e: any) => onChanageEmail(e)}
                         />
                       </div>
                     </div>
@@ -106,6 +128,7 @@ const Contactus = () => {
                           id="subject"
                           className="form-input w-full py-2 px-3 h-10 bg-transparent border border-inherit dark:border-gray-200 dark:bg-slate-100 dark:text-slate-200 rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
                           placeholder="Subject :"
+                          onChange={(e: any) => onChanageSubject(e)}
                         />
                       </div>
 
@@ -121,6 +144,7 @@ const Contactus = () => {
                           id="comments"
                           className="form-input w-full py-2 px-3 bg-transparent border border-inherit dark:border-gray-200 dark:bg-slate-100 dark:text-slate-200 rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2 textarea h-28"
                           placeholder="Message :"
+                          onChange={(e: any) => onChanageComment(e)}
                         ></textarea>
                       </div>
                     </div>
@@ -128,6 +152,7 @@ const Contactus = () => {
                       type="submit"
                       id="submit"
                       name="send"
+                      onClick={handleSubmit}
                       className="py-2 px-5 inline-block font-normal tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-orange-500 hover:bg-orange-600 border-orange-500 hover:border-orange-600 text-white rounded-xl"
                     >
                       Send Message
@@ -145,7 +170,7 @@ const Contactus = () => {
               <div className="relative overflow-hidden text-transparent -m-3">
                 <div className="relative w-full flex items-center justify-center">
                   <img
-                    src="assets/images/icons/call-center-support-service.svg"
+                    src="/assets/images/icons/call-center-support-service.svg"
                     className="w-20 h-32"
                     alt=""
                   />
@@ -202,7 +227,7 @@ const Contactus = () => {
               <div className="relative overflow-hidden text-transparent -m-3">
                 <div className="relative w-full flex items-center justify-center">
                   <img
-                    src="assets/images/icons/location-pin-3.svg"
+                    src="/assets/images/icons/location-pin-3.svg"
                     className="w-20 h-32"
                     alt=""
                   />

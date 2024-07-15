@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import Header from "@/app/components/header";
@@ -7,7 +7,9 @@ import Zoom from "react-medium-image-zoom";
 
 import "react-medium-image-zoom/dist/styles.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-const SinglePortfolio = () => {
+import { findCatalog } from "@/app/network";
+import Link from "next/link";
+const SinglePortfolio = ({ params }: { params: { id: any } }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const [singleCar, setSingleCar] = useState<any>([
     "/assets/images/portfolio/18.jpg",
@@ -17,6 +19,12 @@ const SinglePortfolio = () => {
     "/assets/images/portfolio/18.jpg",
     "/assets/images/portfolio/18.jpg",
   ]);
+  const [singleProduct, setSingleProduct] = useState([] as any);
+  useEffect(() => {
+    findCatalog(params.id).then((res) => {
+      setSingleProduct(res.data);
+    });
+  }, []);
   const thumbSlider = () => {
     return (
       <div className="w-full">
@@ -89,13 +97,13 @@ const SinglePortfolio = () => {
         <div className="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
           <ul className="tracking-[0.5px] mb-0 inline-block">
             <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="index.html">Muvico</a>
+              <Link href="/">Main</Link>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
               <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
             </li>
             <li className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white/50 hover:text-white breadcrumb-color">
-              <a href="">Portfolio</a>
+              <Link href="/portfolio-list">Portfolio List</Link>
             </li>
             <li className="inline-block text-[18px] text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180">
               <i className="mdi mdi-chevron-right align-middle breadcrumb-color"></i>
@@ -104,7 +112,7 @@ const SinglePortfolio = () => {
               className="inline-block capitalize text-[14px] duration-500 ease-in-out text-white breadcrumb-color"
               aria-current="page"
             >
-              Creative
+              Single Portfolio
             </li>
           </ul>
         </div>
@@ -120,19 +128,7 @@ const SinglePortfolio = () => {
                     Project Description
                   </h4>
                   <p className="text-slate-900 dark:text-black/60">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Suscipit totam atque dignissimos porro, exercitationem,
-                    neque alias ea aliquid quibusdam voluptates impedit maxime
-                    aut asperiores consequatur iste. Corporis fuga ducimus
-                    dignissimos. Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Adipisci non dolorem consequatur vitae
-                    hic.
-                  </p>
-                  <p className="text-slate-100 dark:text-black/60 mt-2">
-                    Suscipit totam atque dignissimos porro, exercitationem,
-                    neque alias ea aliquid quibusdam voluptates impedit maxime
-                    aut asperiores consequatur iste. Corporis fuga ducimus
-                    dignissimos.
+                    {singleProduct?.description}
                   </p>
                 </div>
               </div>
@@ -144,29 +140,9 @@ const SinglePortfolio = () => {
                   Project Info :
                 </h5>
                 <dl className="grid grid-cols-12 mb-0 mt-4">
-                  <dt className="md:col-span-4 col-span-5 mt-2">Client :</dt>
+                  <dt className="md:col-span-4 col-span-5 mt-2">Title :</dt>
                   <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    Calvin Carlo
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Category :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    Web Design
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Date :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    23rd Sep, 2021
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Website :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    www.yourdomain.com
-                  </dd>
-
-                  <dt className="md:col-span-4 col-span-5 mt-2">Location :</dt>
-                  <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    3/2/64 Mongus Street, UK
+                    {singleProduct?.title}
                   </dd>
                 </dl>
               </div>
