@@ -39,6 +39,9 @@ export const getAllSlider = () => {
 export const getGalleryProduct = (id: number) => {
   return customerAxios.get(`GetGalleryProduct?ProductId=${id}`);
 };
+export const getGalleryCatalog = (id: number) => {
+  return customerAxios.get(`GetGalleryCatalog?CatalogId=${id}`);
+};
 export const findProduct = (id: number) => {
   return customerAxios.post(`FindProduct?ProductId=${id}`);
 };

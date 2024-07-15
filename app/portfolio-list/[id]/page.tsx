@@ -7,22 +7,19 @@ import Zoom from "react-medium-image-zoom";
 
 import "react-medium-image-zoom/dist/styles.css";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { findCatalog } from "@/app/network";
+import { findCatalog, getGalleryCatalog } from "@/app/network";
 import Link from "next/link";
+import { IMAGE_URL } from "@/app/global";
 const SinglePortfolio = ({ params }: { params: { id: any } }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-  const [singleCar, setSingleCar] = useState<any>([
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-    "/assets/images/portfolio/18.jpg",
-  ]);
+  const [sliderList, setSliderList] = useState<any>([]);
   const [singleProduct, setSingleProduct] = useState([] as any);
   useEffect(() => {
     findCatalog(params.id).then((res) => {
       setSingleProduct(res.data);
+    });
+    getGalleryCatalog(params.id).then((res) => {
+      setSliderList(res.data);
     });
   }, []);
   const thumbSlider = () => {
@@ -36,14 +33,14 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper2"
           >
-            {singleCar.map((slider: string, index: number) => {
+            {sliderList.map((slider: any, index: number) => {
               return (
                 <SwiperSlide key={index}>
                   <Zoom>
                     <img
-                      src={`${slider}`}
+                      src={IMAGE_URL + slider.imagePath + slider.imageName}
                       style={{ width: "100%", height: "400px" }}
-                      alt={slider}
+                      alt={slider.galleryTitle}
                     />
                   </Zoom>
                 </SwiperSlide>
@@ -61,13 +58,13 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper3"
           >
-            {singleCar.map((slider: string, index: number) => {
+            {sliderList.map((slider: any, index: number) => {
               return (
                 <SwiperSlide key={index}>
                   <img
-                    src={`${slider}`}
+                    src={IMAGE_URL + slider.imagePath + slider.imageName}
                     style={{ width: "100%", height: "70px" }}
-                    alt={slider}
+                    alt={slider.galleryTitle}
                   />
                 </SwiperSlide>
               );
