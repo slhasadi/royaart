@@ -31,13 +31,13 @@ const Header = () => {
               <li>
                 <Link
                   className={
-                    path == "aboutus"
+                    path == "aboutme"
                       ? "sub-menu-item nav-active"
                       : "sub-menu-item"
                   }
-                  href="/aboutus"
+                  href="/aboutme"
                 >
-                  About Us
+                  About Me
                 </Link>
               </li>
 
@@ -70,13 +70,13 @@ const Header = () => {
               <li>
                 <Link
                   className={
-                    path == "contactus"
+                    path == "contactme"
                       ? "sub-menu-item nav-active"
                       : "sub-menu-item"
                   }
-                  href="/contactus"
+                  href="/contactme"
                 >
-                  Contact Us
+                  Contact Me
                 </Link>
               </li>
             </ul>
@@ -140,13 +140,13 @@ const Header = () => {
                 <li className="py-3">
                   <Link
                     className={
-                      path == "aboutus"
+                      path == "aboutme"
                         ? "sub-menu-item nav-active"
                         : "sub-menu-item"
                     }
-                    href="/aboutus"
+                    href="/aboutme"
                   >
-                    About Us
+                    About Me
                   </Link>
                 </li>
 
@@ -179,13 +179,13 @@ const Header = () => {
                 <li className="py-3">
                   <Link
                     className={
-                      path == "contactus"
+                      path == "contactme"
                         ? "sub-menu-item nav-active"
                         : "sub-menu-item"
                     }
-                    href="/contactus"
+                    href="/contactme"
                   >
-                    Contact Us
+                    Contact Me
                   </Link>
                 </li>
               </ul>

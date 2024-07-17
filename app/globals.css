@@ -5,7 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {}
+body {
+  background-color: black !important;
+}
 
 .swiper {
   width: 100%;
@@ -107,11 +109,11 @@ body {}
 
 .gradient-pink-to-white {
   background: #490753 !important;
-  background: linear-gradient(180deg, rgba(73, 7, 83, 1) 0%, rgba(255, 255, 255, 1) 100%) !important;
+  background: linear-gradient(180deg, rgba(73, 7, 83, 1) 0%, rgb(0, 0, 0) 100%) !important;
 }
 
 .breadcrumb-color {
-  color: #490753 !important;
+  color: #ffffff !important;
 
 }
 
@@ -136,13 +138,13 @@ body {}
 }
 
 .product-img {
-  width: 350px !important;
-  height: 350px !important;
+  width: 500px !important;
+  height: 281px !important;
 }
 
 .product2-img {
-  width: 410px !important;
-  height: 410px !important;
+  width: 500px !important;
+  height: 281px !important;
 }
 
 @media (max-width: 760px) {
@@ -153,11 +155,43 @@ body {}
 
   .product-img {
     width: 300px !important;
-    height: 300px !important;
+    height: 169px !important;
   }
 
   .product2-img {
     width: 225px !important;
     height: 225px !important;
   }
+}
+
+.neon-border {
+  box-shadow: 0 0 1px #490753, 0 0 2px #490753, 0 0 6px #490753, 0 0 12px #490753, inset 0 0 1px #490753, inset 0 0 2px #490753, inset 0 0 6px #490753, inset 0 0 12px #490753;
+}
+
+.neon-text {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 30px #fff,
+    0 0 0px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #490753,
+    0 0 92px #490753,
+    0 0 102px #490753,
+    0 0 151px #490753;
+}
+
+.bg-dark-gray {
+  background-color: #000;
+}
+
+.text-green {
+  color: #490753;
+}
+
+.bg-green {
+  background-color: #490753;
+}
+
+.border-green {
+  border-color: #490753;
 }

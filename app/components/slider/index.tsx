@@ -58,7 +58,8 @@ const Slider = () => {
                   <ul className="buy-button flex gap-3 list-none mb-0">
                     <li className="inline mb-0">
                       <a
-                        href=""
+                        href="https://www.instagram.com/roya_moradkhani?igsh=MWhxcmpqZHJpNmo4ZA=="
+                        target="_blank"
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
@@ -70,11 +71,12 @@ const Slider = () => {
                     </li>
                     <li className="inline mb-0">
                       <a
-                        href=""
+                        href="https://x.com/Roya_moradkhani?t=Oao23ipXA-WSS2qH8U_YDQ&s=09"
+                        target="_blank"
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="/assets/images/pinterest.png"
+                          src="/assets/images/twitter.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />
@@ -82,11 +84,12 @@ const Slider = () => {
                     </li>
                     <li className="inline mb-0">
                       <a
-                        href=""
+                        href="https://www.linkedin.com/in/roya-moradkhani?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank"
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="/assets/images/telegram.png"
+                          src="/assets/images/linkedin.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />
@@ -94,11 +97,12 @@ const Slider = () => {
                     </li>
                     <li className="inline mb-0">
                       <a
-                        href=""
+                        href="https://linktr.ee/royamoradkhani"
+                        target="_blank"
                         className="h-[38px] w-[38px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[15px] text-center rounded-xl bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 text-white"
                       >
                         <img
-                          src="/assets/images/whatsapp.png"
+                          src="/assets/images/linktree.png"
                           alt=""
                           className="w-[24px] h-[24px]"
                         />

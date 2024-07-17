@@ -49,73 +49,75 @@ const PortfolioListPage = () => {
 
       <div className="flex flex-col items-center justify-center">
         {portList.map((item: any, index: number) => {
-          return (
-            <div
-              className="w-[80%] my-10 bg-[#000000d4] p-5 rounded-md mt-20"
-              key={index}
-            >
-              <div className="relative">
-                <div className="">
-                  <h5 className="md:text-[32px] text-white font-bold mt-3">
-                    {item.categoryName}
-                  </h5>
-                </div>
-              </div>
-              <Swiper
-                slidesPerView={3}
-                spaceBetween={0}
-                breakpoints={{
-                  320: {
-                    // width: 576,
-                    slidesPerView: 1,
-                  },
-                  768: {
-                    // width: 768,
-                    slidesPerView: 3,
-                  },
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper"
+          if (item.listCatalogs.length) {
+            return (
+              <div
+                className="w-[80%] my-10 bg-[#49075330] p-5 rounded-md mt-20"
+                key={index}
               >
-                {item.listCatalogs.map((cat: any, i: number) => {
-                  return (
-                    <SwiperSlide key={i}>
-                      <div
-                        className="w-full p-3 picture-item mb-10"
-                        data-groups='["branding"]'
-                      >
-                        <div className="group relative block overflow-hidden rounded-xl duration-500">
-                          <img
-                            src={IMAGE_URL + cat.imagePath + cat.imageName}
-                            className="group-hover:origin-center group-hover:scale-125 duration-500 product2-img"
-                            alt=""
-                          />
-                          <div className="absolute inset-2 group-hover:bg-white/90 dark:group-hover:bg-slate-900/90 duration-500 z-0 rounded-xl"></div>
+                <div className="relative">
+                  <div className="text-center py-5">
+                    <h5 className="md:text-[48px] neon-text text-white font-bold mt-3">
+                      {item.categoryName}
+                    </h5>
+                  </div>
+                </div>
+                <Swiper
+                  slidesPerView={3}
+                  spaceBetween={0}
+                  breakpoints={{
+                    320: {
+                      // width: 576,
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      // width: 768,
+                      slidesPerView: 3,
+                    },
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  modules={[Pagination]}
+                  className="mySwiper"
+                >
+                  {item.listCatalogs.map((cat: any, i: number) => {
+                    return (
+                      <SwiperSlide key={i}>
+                        <div
+                          className="w-full p-3 picture-item mb-10"
+                          data-groups='["branding"]'
+                        >
+                          <div className="group relative block overflow-hidden rounded-xl duration-500">
+                            <Link href={`/portfolio-list/${cat.catalogId}`}>
+                              <img
+                                src={IMAGE_URL + cat.imagePath + cat.imageName}
+                                className="group-hover:origin-center group-hover:scale-125 duration-500 product2-img"
+                                alt=""
+                              />
+                              <div className="absolute inset-2 group-hover:bg-white/90 dark:group-hover:bg-slate-900/90 duration-500 z-0 rounded-xl"></div>
 
-                          <div className="content duration-500">
-                            <div className="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
-                              <Link
-                                href="/portfolio-list/1"
-                                className="h6 text-[15px] font-medium hover:text-orange-500 duration-500 ease-in-out"
-                              >
-                                {cat.title}
-                              </Link>
-                              {/* <p className="text-slate-400 dark:text-white/60 mb-0">
+                              <div className="content duration-500">
+                                <div className="absolute z-10 opacity-0 group-hover:opacity-100 bottom-6 start-6 duration-500">
+                                  <p className="h6 text-[22px] font-medium hover:text-orange-500 duration-500 ease-in-out text-[#fff]">
+                                    {cat.title}
+                                  </p>
+                                  {/* <p className="text-slate-400 dark:text-white/60 mb-0">
                                 Abstract
                               </p> */}
-                            </div>
+                                </div>
+                              </div>
+                            </Link>
                           </div>
                         </div>
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
-            </div>
-          );
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
+            );
+          }
+          return <></>;
         })}
       </div>
     </>
