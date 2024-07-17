@@ -3,16 +3,17 @@ import { BASE_URL } from "../global.js";
 const customerAxios = axios.create({
   baseURL: `${BASE_URL}`,
 });
+const customerAxios2 = axios.create({
+  baseURL: `https://dummyjson.com/`,
+});
 
 // Request interceptor for adding the bearer token
 customerAxios.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token"); // Assuming you store the token in localStorage
-    if (token) {
-      config.headers.Accept = "*/*";
-      config.headers.Accept = "*/*";
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+    config.headers.Accept = "*/*";
+    config.headers.mode = "no-cors";
+    config.headers["Content-Type"] = "multipart/form-data";
+
     return config;
   },
   (error) => {
@@ -53,6 +54,9 @@ export const getCatalogForPortfolio = () => {
 };
 export const registerContactUs = (data: any) => {
   return customerAxios.post(`RegisterContactUs`, data);
+};
+export const posts = () => {
+  return customerAxios2.get(`products`);
 };
 
 // Export the api instance
