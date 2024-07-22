@@ -138,13 +138,13 @@ body {
 }
 
 .product-img {
-  width: 500px !important;
-  height: 281px !important;
+  width: 300px !important;
+  height: 181px !important;
 }
 
 .product2-img {
   width: 500px !important;
-  height: 281px !important;
+  height: 280px !important;
 }
 
 @media (max-width: 760px) {
@@ -155,12 +155,12 @@ body {
 
   .product-img {
     width: 300px !important;
-    height: 169px !important;
+    height: 180px !important;
   }
 
   .product2-img {
-    width: 225px !important;
-    height: 225px !important;
+    width: 300px !important;
+    height: 180px !important;
   }
 }
 

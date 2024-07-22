@@ -31,7 +31,7 @@ const VideoSection = () => {
       <section className="relative md:py-24 py-16 md:pt-0 pt-0">
         <div className="container relative">
           <div className="flex justify-center">
-            <p className="text-slate-400 dark:text-white/60 text-[25px] w-full mt-4 text-center pb-20">
+            <p className="text-slate-400 dark:text-white/60 text-[14px] md:text-[23px] z-10 w-full mt-4 text-justify md:text-center pb-5 md:pb-20">
               I&#39;m a visual explorer, a photographer and graphic designer.
               always chasing the next creative challenge.I can unleash my unique
               perspective through the lens and the digital tools at my
@@ -71,21 +71,25 @@ const VideoSection = () => {
                 <div className="md:text-start text-center justify-center">
                   <div className="lg:col-start-2 lg:col-span-10">
                     <div className="flex justify-center">
-                      <div className="flex justify-around w-full items-center flex-col gap-5 md:gap-0 md:flex-row text-md-start">
+                      <div className="flex justify-center w-full items-center flex-row gap-10 text-md-start">
                         <a
                           href="https://spatial.io/s/Roya-Moradkhani-Fine-Art-Gallery-62835d3d13b87100012098c8?share=3068808455403664079"
                           target="_blank"
                         >
-                          <div className="w-[200px] h-[62px] bg-[#fff] flex items-center justify-center  text-[#000] text-[32px] font-medium px-7 py-3 rounded-full cursor-pointer">
-                            <span className="">Metaverse</span>
+                          <div className="w-[100px] md:w-[200px] h-[42px] md:h-[62px] bg-[#fff] flex items-center justify-center  text-[#000] text-[15px] md:text-[32px] font-medium px-7 py-3 rounded-full cursor-pointer">
+                            <span className="text-[14px] md:text-[25px]">
+                              Metaverse
+                            </span>
                           </div>
                         </a>
                         <a
                           href="https://foundation.app/@roya_moradkhani"
                           target="_blank"
                         >
-                          <div className="w-[200px] h-[62px] bg-[#fff] flex items-center justify-center  text-[#000] text-[32px] font-medium px-7 py-3 rounded-full cursor-pointer">
-                            <span className="">NFT</span>
+                          <div className="w-[100px] md:w-[200px] h-[42px] md:h-[62px] bg-[#fff] flex items-center justify-center  text-[#000] text-[15px] md:text-[52px] font-medium px-7 py-3 rounded-full cursor-pointer">
+                            <span className="text-[14px] md:text-[25px]">
+                              NFT
+                            </span>
                           </div>
                         </a>
                       </div>

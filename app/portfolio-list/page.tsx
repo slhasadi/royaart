@@ -52,12 +52,12 @@ const PortfolioListPage = () => {
           if (item.listCatalogs.length) {
             return (
               <div
-                className="w-[80%] my-10 bg-[#49075330] p-5 rounded-md mt-20"
+                className="w-[95%] md:w-[80%] my-10 bg-[#49075330] p-2 md:p-5 rounded-md mt-20"
                 key={index}
               >
                 <div className="relative">
                   <div className="text-center py-5">
-                    <h5 className="md:text-[48px] neon-text text-white font-bold mt-3">
+                    <h5 className="text-[28px] md:text-[48px] neon-text text-white font-bold mt-3">
                       {item.categoryName}
                     </h5>
                   </div>

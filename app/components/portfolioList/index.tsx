@@ -18,8 +18,8 @@ const PortfolioList = () => {
     });
   }, []);
   return (
-    <section className="relative md:py-24 py-16 to-orange-500">
-      <div className="container relative my-20">
+    <section className="relative py-0 md:py-24 pb-16 md:pb-0 to-orange-500">
+      <div className="container relative my-0 md:my-20 mb-16 md:mb-0">
         <div className="flex justify-center">
           <h5 className="md:text-[42px] md:leading-normal text-3xl leading-normal font-bold mt-3">
             PortFolio
@@ -35,7 +35,7 @@ const PortfolioList = () => {
             return (
               <div
                 key={item}
-                className="lg:w-[500px] h-[169px] md:h-[281px] picture-item"
+                className="lg:w-[300px] h-[180px] md:h-[180px] picture-item mb-16"
                 data-groups='["branding"]'
               >
                 <div className="group w-full h-full relative block overflow-hidden rounded-xl duration-500">
@@ -59,12 +59,15 @@ const PortfolioList = () => {
                     </div>
                   </Link>
                 </div>
+                <div className="md:text-[14px] md:leading-normal leading-normal font-bold mt-3">
+                  {item.title}
+                </div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-7">
+        <div className="mt-7 flex justify-center">
           <Link href="/portfolio-list">
             <span className="bg-[#fff] text-[#000] text-[22px] font-medium px-7 py-3 rounded-full cursor-pointer h-5">
               More...

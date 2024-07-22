@@ -59,7 +59,7 @@ const Shop = () => {
                 <div className="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                   <Link href={`/shop/${item.productId}`}>
                     <img
-                      className="h-48 w-full object-cover object-center"
+                      className="h-56 w-full object-cover object-center"
                       src={IMAGE_URL + item.imagePath + item.imageName}
                       alt="Product Image"
                     />
