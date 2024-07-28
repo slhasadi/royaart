@@ -1,14 +1,15 @@
 "use client";
 import { IMAGE_URL } from "@/app/global";
-import { getAllCatalog } from "@/app/network";
+import { getAllCatalog, getAllCatalogCategory } from "@/app/network";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const PortfolioList = () => {
   const [portList, setPortList] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
+    let product: any = [];
     getAllCatalog().then((res) => {
-      let product: any = [];
       res.data.forEach((element: any) => {
         if (element.specialCatalog) {
           product.push(element);

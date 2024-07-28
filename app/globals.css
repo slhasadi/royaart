@@ -170,14 +170,14 @@ body {
 
 .neon-text {
   text-shadow:
-    0 0 7px #fff,
-    0 0 30px #fff,
-    0 0 0px #fff,
-    0 0 42px #bc13fe,
-    0 0 82px #490753,
-    0 0 92px #490753,
-    0 0 102px #490753,
-    0 0 151px #490753;
+    0 0 7px #fbe7fc,
+    0 0 30px #eec3ff,
+    0 0 0px #8950a0,
+    0 0 42px #620f83,
+    0 0 82px #2b0830,
+    0 0 92px #512c56,
+    0 0 102px #3b1541,
+    0 0 151px #000000;
 }
 
 .bg-dark-gray {
@@ -194,4 +194,20 @@ body {
 
 .border-green {
   border-color: #490753;
+}
+
+.swiper-pagination-bullet {
+  width: 25px !important;
+  height: 25px !important;
+  text-align: center !important;
+  line-height: 25px !important;
+  font-size: 12px !important;
+  color: #000 !important;
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff !important;
 }

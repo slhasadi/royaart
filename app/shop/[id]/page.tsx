@@ -121,10 +121,10 @@ const SingleShop = ({ params }: { params: { id: any } }) => {
               <div className="md:flex-1 px-4">{thumbSlider()}</div>
               <div className="flex mt-6">
                 <div className="w-full">
-                  <h4 className="text-3xl leading-normal font-semibold mb-6">
+                  <h4 className="text-3xl text-white leading-normal font-semibold mb-6">
                     Product Description
                   </h4>
-                  <p className="text-slate-900 dark:text-black/60">
+                  <p className="text-white dark:text-white">
                     {singleProduct.description}
                   </p>
                 </div>

@@ -15,6 +15,12 @@ const PortfolioListPage = () => {
       setPortList(res.data.listCategories);
     });
   }, []);
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index: any, className: any) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
   return (
     <>
       <Header />
@@ -75,9 +81,7 @@ const PortfolioListPage = () => {
                       slidesPerView: 3,
                     },
                   }}
-                  pagination={{
-                    clickable: true,
-                  }}
+                  pagination={pagination}
                   modules={[Pagination]}
                   className="mySwiper"
                 >
