@@ -39,8 +39,8 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
                   <Zoom>
                     <img
                       src={IMAGE_URL + slider.imagePath + slider.imageName}
-                      style={{ width: "100%", height: "400px" }}
                       alt={slider.galleryTitle}
+                      className="shop-port-img-slider"
                     />
                   </Zoom>
                 </SwiperSlide>
@@ -63,8 +63,8 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={IMAGE_URL + slider.imagePath + slider.imageName}
-                    style={{ width: "100%", height: "70px" }}
                     alt={slider.galleryTitle}
+                    className="shop-port-img-slider-bottom"
                   />
                 </SwiperSlide>
               );
@@ -137,7 +137,9 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
                   Project Info :
                 </h5>
                 <dl className="grid grid-cols-12 mb-0 mt-4">
-                  <dt className="md:col-span-4 col-span-5 mt-2">Title :</dt>
+                  <dt className="md:col-span-4 col-span-5 mt-2 text-white">
+                    Title :
+                  </dt>
                   <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
                     {singleProduct?.title}
                   </dd>

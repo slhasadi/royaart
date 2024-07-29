@@ -70,7 +70,7 @@ const Shop = () => {
 
                       <div className="flex items-center">
                         <p className="mr-2 text-lg font-semibold text-gray-900 dark:text-white">
-                          {USDollar.format(item.price)}
+                          {item.price}
                         </p>
                       </div>
                     </div>

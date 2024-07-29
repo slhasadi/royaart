@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/header";
 import { registerContactUs } from "../network";
 import Link from "next/link";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactMe = () => {
   const [name, setName] = useState("");
@@ -28,7 +30,22 @@ const ContactMe = () => {
       Subject: subject,
       Comment: comment,
     };
-    registerContactUs(data).then(() => {});
+    registerContactUs(data).then(() => {
+      setName("");
+      setComment("");
+      setSubject("");
+      setEmail("");
+      toast.success("Yor comment has been sended", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    });
   };
 
   return (
@@ -76,88 +93,90 @@ const ContactMe = () => {
                     Get in touch !
                   </h3>
 
-                  <form method="post" name="myForm" id="myForm">
-                    <p className="mb-0" id="error-msg"></p>
-                    <div id="simple-msg"></div>
-                    <div className="grid lg:grid-cols-12 lg:gap-6">
-                      <div className="lg:col-span-6 mb-5">
-                        <label
-                          htmlFor="name"
-                          className="form-label font-medium text-white"
-                        >
-                          Your Name:
-                        </label>
-                        <input
-                          name="name"
-                          id="name"
-                          type="text"
-                          className="form-input w-full py-2 px-3 h-10 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
-                          placeholder="Name :"
-                          onChange={(e: any) => onChanageName(e)}
-                        />
-                      </div>
-
-                      <div className="lg:col-span-6 mb-5">
-                        <label
-                          htmlFor="email"
-                          className="form-label font-medium text-white"
-                        >
-                          Your Email:
-                        </label>
-                        <input
-                          name="email"
-                          id="email"
-                          type="email"
-                          className="form-input w-full py-2 px-3 h-10 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
-                          placeholder="Email :"
-                          onChange={(e: any) => onChanageEmail(e)}
-                        />
-                      </div>
+                  <p className="mb-0" id="error-msg"></p>
+                  <div id="simple-msg"></div>
+                  <div className="grid lg:grid-cols-12 lg:gap-6">
+                    <div className="lg:col-span-6 mb-5">
+                      <label
+                        htmlFor="name"
+                        className="form-label font-medium text-white"
+                      >
+                        Your Name:
+                      </label>
+                      <input
+                        name="name"
+                        id="name"
+                        value={name}
+                        type="text"
+                        className="form-input text-white w-full py-2 px-3 h-10 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
+                        placeholder="Name :"
+                        onChange={(e: any) => onChanageName(e)}
+                      />
                     </div>
 
-                    <div className="grid grid-cols-1">
-                      <div className="mb-5">
-                        <label
-                          htmlFor="subject"
-                          className="form-label font-medium text-white"
-                        >
-                          Your Question:
-                        </label>
-                        <input
-                          name="subject"
-                          id="subject"
-                          className="form-input w-full py-2 px-3 h-10 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
-                          placeholder="Subject :"
-                          onChange={(e: any) => onChanageSubject(e)}
-                        />
-                      </div>
-
-                      <div className="mb-5">
-                        <label
-                          htmlFor="comments"
-                          className="form-label font-medium text-white"
-                        >
-                          Your Comment:
-                        </label>
-                        <textarea
-                          name="comments"
-                          id="comments"
-                          className="form-input w-full py-2 px-3 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2 textarea h-28"
-                          placeholder="Message :"
-                          onChange={(e: any) => onChanageComment(e)}
-                        ></textarea>
-                      </div>
+                    <div className="lg:col-span-6 mb-5">
+                      <label
+                        htmlFor="email"
+                        className="form-label font-medium text-white"
+                      >
+                        Your Email:
+                      </label>
+                      <input
+                        name="email"
+                        id="email"
+                        value={email}
+                        type="email"
+                        className="form-input text-white w-full py-2 px-3 h-10 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
+                        placeholder="Email :"
+                        onChange={(e: any) => onChanageEmail(e)}
+                      />
                     </div>
-                    <button
-                      type="submit"
-                      id="submit"
-                      name="send"
-                      onClick={handleSubmit}
-                      className="py-2 px-5 inline-block font-normal tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-[#fff] hover:bg-orange-600 border-orange-500 hover:border-orange-600 text-[#490753] rounded-xl"
-                    >
-                      Send Message
-                    </button>
-                  </form>
+                  </div>
+
+                  <div className="grid grid-cols-1">
+                    <div className="mb-5">
+                      <label
+                        htmlFor="subject"
+                        className="form-label font-medium text-white"
+                      >
+                        Your Question:
+                      </label>
+                      <input
+                        name="subject"
+                        id="subject"
+                        value={subject}
+                        className="form-input w-full text-white py-2 px-3 h-10 bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2"
+                        placeholder="Subject :"
+                        onChange={(e: any) => onChanageSubject(e)}
+                      />
+                    </div>
+
+                    <div className="mb-5">
+                      <label
+                        htmlFor="comments"
+                        className="form-label font-medium text-white"
+                      >
+                        Your Comment:
+                      </label>
+                      <textarea
+                        name="comments"
+                        id="comments"
+                        value={comment}
+                        className="form-input w-full py-2 px-3 text-white bg-transparent border border-[#601c7c] rounded-xl outline-none focus:border-orange-500/50 dark:focus:border-orange-500/50 focus:ring-0 mt-2 textarea h-28"
+                        placeholder="Message :"
+                        onChange={(e: any) => onChanageComment(e)}
+                      ></textarea>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    id="submit"
+                    name="send"
+                    onClick={handleSubmit}
+                    className="py-2 px-5 inline-block font-normal tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-[#fff] hover:bg-orange-600 border-orange-500 hover:border-orange-600 text-[#490753] rounded-xl"
+                  >
+                    Send Message
+                  </button>
                 </div>
               </div>
             </div>
@@ -217,7 +236,7 @@ const ContactMe = () => {
                     href="mailto:contact@example.com"
                     className="text-orange-500 hover:text-orange-500 after:bg-orange-500 transition duration-500"
                   >
-                    contact@example.com
+                    contact@royaartport.com
                   </a>
                 </div>
               </div>
@@ -240,19 +259,20 @@ const ContactMe = () => {
                 </p>
 
                 <div className="mt-5">
-                  <a
+                  {/* <a
                     href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
                     data-type="iframe"
                     className="video-play-icon read-more lightbox text-orange-500 hover:text-orange-500 after:bg-orange-500 transition duration-500"
                   >
                     View on Google map
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <ToastContainer />
     </>
   );
 };

@@ -39,7 +39,8 @@ const SingleShop = ({ params }: { params: { id: any } }) => {
                   <Zoom>
                     <img
                       src={IMAGE_URL + slider.imagePath + slider.imageName}
-                      style={{ width: "100%", height: "400px" }}
+                      style={{}}
+                      className="shop-port-img-slider"
                       alt={slider}
                     />
                   </Zoom>
@@ -63,7 +64,8 @@ const SingleShop = ({ params }: { params: { id: any } }) => {
                 <SwiperSlide key={index}>
                   <img
                     src={IMAGE_URL + slider.imagePath + slider.imageName}
-                    style={{ width: "100%", height: "70px" }}
+                    style={{}}
+                    className="shop-port-img-slider-bottom"
                     alt={slider}
                   />
                 </SwiperSlide>
@@ -137,14 +139,18 @@ const SingleShop = ({ params }: { params: { id: any } }) => {
                   Product Info :
                 </h5>
                 <dl className="grid grid-cols-12 mb-0 mt-4">
-                  <dt className="md:col-span-4 col-span-5 mt-2">Title :</dt>
+                  <dt className="md:col-span-4 col-span-5 mt-2 text-white">
+                    Title :
+                  </dt>
                   <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
                     {singleProduct.title}
                   </dd>
 
-                  <dt className="md:col-span-4 col-span-5 mt-2">Price :</dt>
+                  <dt className="md:col-span-4 col-span-5 mt-2 text-white">
+                    Price :
+                  </dt>
                   <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                    {singleProduct.price + " " + "Toman"}
+                    {singleProduct.price}
                   </dd>
                 </dl>
               </div>

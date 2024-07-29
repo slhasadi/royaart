@@ -229,7 +229,7 @@ const AboutMe = () => {
             <span className="text-slate-400 dark:text-white/60 mb-4">
               Available for freelance projects
             </span>
-            <h3 className="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
+            <h3 className="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold text-white">
               Do you have designing project? <br /> Let's talk.
             </h3>
 
