@@ -31,19 +31,6 @@ const Header = () => {
               <li>
                 <Link
                   className={
-                    path == "aboutme"
-                      ? "sub-menu-item nav-active"
-                      : "sub-menu-item"
-                  }
-                  href="/aboutme"
-                >
-                  About Me
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  className={
                     path == "shop"
                       ? "sub-menu-item nav-active"
                       : "sub-menu-item"
@@ -66,7 +53,28 @@ const Header = () => {
                   Portfolio
                 </Link>
               </li>
-
+              <li className="">
+                <Link
+                  className={
+                    path == "cv" ? "sub-menu-item nav-active" : "sub-menu-item"
+                  }
+                  href="/cv"
+                >
+                  Cv
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={
+                    path == "aboutme"
+                      ? "sub-menu-item nav-active"
+                      : "sub-menu-item"
+                  }
+                  href="/aboutme"
+                >
+                  About Me
+                </Link>
+              </li>
               <li>
                 <Link
                   className={
@@ -140,19 +148,6 @@ const Header = () => {
                 <li className="py-3">
                   <Link
                     className={
-                      path == "aboutme"
-                        ? "sub-menu-item nav-active"
-                        : "sub-menu-item"
-                    }
-                    href="/aboutme"
-                  >
-                    About Me
-                  </Link>
-                </li>
-
-                <li className="py-3">
-                  <Link
-                    className={
                       path == "shop"
                         ? "sub-menu-item nav-active"
                         : "sub-menu-item"
@@ -175,7 +170,30 @@ const Header = () => {
                     Portfolio
                   </Link>
                 </li>
-
+                <li className="py-3">
+                  <Link
+                    className={
+                      path == "cv"
+                        ? "sub-menu-item nav-active"
+                        : "sub-menu-item"
+                    }
+                    href="/cv"
+                  >
+                    Cv
+                  </Link>
+                </li>
+                <li className="py-3">
+                  <Link
+                    className={
+                      path == "aboutme"
+                        ? "sub-menu-item nav-active"
+                        : "sub-menu-item"
+                    }
+                    href="/aboutme"
+                  >
+                    About Me
+                  </Link>
+                </li>
                 <li className="py-3">
                   <Link
                     className={

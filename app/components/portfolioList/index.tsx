@@ -19,8 +19,8 @@ const PortfolioList = () => {
     });
   }, []);
   return (
-    <section className="relative py-0 md:py-24 pb-16 md:pb-0 to-orange-500">
-      <div className="container relative my-0 md:my-20 mb-16 md:mb-0">
+    <section className="relative py-0 pb-16 md:pb-0 to-orange-500">
+      <div className="container relative my-0 mb-16 md:mb-0">
         <div className="flex justify-center">
           <h5 className="md:text-[42px] md:leading-normal text-3xl leading-normal font-bold mt-3">
             PortFolio
@@ -30,7 +30,7 @@ const PortfolioList = () => {
       <div className="container relative">
         <div
           id="grid"
-          className="flex gap-10 flex-wrap md:flex justify-center mx-auto mt-4"
+          className="flex gap-1 md:gap-10 flex-wrap md:flex justify-center mx-auto mt-4"
         >
           {portList.map((item: any) => {
             return (

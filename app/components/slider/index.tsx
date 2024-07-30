@@ -4,6 +4,7 @@ import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import { getAllSlider } from "@/app/network";
 import { IMAGE_URL } from "@/app/global";
+import { TypeAnimation } from "react-type-animation";
 
 const Slider = () => {
   const [slideList, setSlideList] = useState([] as any);
@@ -39,14 +40,29 @@ const Slider = () => {
                         // objectFit="cover"
                       />
                       {slide.description && (
-                        <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
-                          <p className="text-[18px] md:text-[45px] text-[#fff]">
-                            {slide.title}
-                          </p>
-                          <p className="text-[14px] md:text-[25px] text-[#fff]">
-                            {slide.description}
-                          </p>
+                        <div className="absolute w-[300px] md:w-[420px] top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
+                          <TypeAnimation
+                            style={{
+                              whiteSpace: "pre-line",
+                              display: "block",
+                            }}
+                            className="text-[35px] md:text-[45px] text-[#fff]"
+                            sequence={[
+                              `${slide.title}\n${slide.description}`,
+                              10000,
+                              "",
+                            ]}
+                            repeat={Infinity}
+                          />
                         </div>
+                        // <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
+                        //   <p className="text-[18px] md:text-[45px] text-[#fff]">
+                        //     {slide.title}
+                        //   </p>
+                        //   <p className="text-[14px] md:text-[25px] text-[#fff]">
+                        //     {slide.description}
+                        //   </p>
+                        // </div>
                       )}
                     </div>
                   </SwiperSlide>
