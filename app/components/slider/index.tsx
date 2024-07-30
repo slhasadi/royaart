@@ -25,7 +25,7 @@ const Slider = () => {
                 disableOnInteraction: false,
               }}
               modules={[Autoplay]}
-              className="mySwiper"
+              className="mySliderSwiper"
             >
               {slideList.map((slide: any) => {
                 return (
@@ -34,7 +34,7 @@ const Slider = () => {
                       <img
                         src={IMAGE_URL + slide.imagePath + slide.imageName}
                         alt=""
-                        className="w-full"
+                        className="w-full h-full slider-swiper-img"
                         loading="lazy"
                         // fill
                         // objectFit="cover"
