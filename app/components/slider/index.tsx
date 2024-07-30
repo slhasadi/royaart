@@ -38,14 +38,16 @@ const Slider = () => {
                         // fill
                         // objectFit="cover"
                       />
-                      <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
-                        <p className="text-[18px] md:text-[45px] text-[#fff]">
-                          {slide.title}
-                        </p>
-                        <p className="text-[14px] md:text-[25px] text-[#fff]">
-                          Photographer
-                        </p>
-                      </div>
+                      {slide.description && (
+                        <div className="absolute top-[38%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-left bg-[#00000093] p-2 md:p-10">
+                          <p className="text-[18px] md:text-[45px] text-[#fff]">
+                            {slide.title}
+                          </p>
+                          <p className="text-[14px] md:text-[25px] text-[#fff]">
+                            {slide.description}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </SwiperSlide>
                 );

@@ -40,7 +40,7 @@ const PortfolioList = () => {
                 data-groups='["branding"]'
               >
                 <div className="group w-full h-full relative block overflow-hidden rounded-xl duration-500">
-                  <Link href={`portfolio-list/${item.catalogId}`}>
+                  <Link href={`portfolio-cat/${item.categoryRef}`}>
                     <img
                       src={IMAGE_URL + item.imagePath + item.imageName}
                       className="group-hover:origin-center w-[500px] h-full group-hover:scale-125 duration-500 product-img"
@@ -61,7 +61,7 @@ const PortfolioList = () => {
                   </Link>
                 </div>
                 <div className="md:text-[14px] md:leading-normal leading-normal font-bold mt-3">
-                  {item.title}
+                  {item.categoryName}
                 </div>
               </div>
             );
