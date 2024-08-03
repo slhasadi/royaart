@@ -16,6 +16,15 @@ const Shop = () => {
     style: "currency",
     currency: "USD",
   });
+  useEffect(() => {
+    const handleContextmenu = (e: any) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
   return (
     <div>
       <Header />
@@ -28,7 +37,7 @@ const Shop = () => {
             </h3>
 
             <p className="text-white/70 text-base max-w-xl mx-auto">
-              Showcase of Our Awesome Works in Four Columns SLH
+              Roya Moradkhani
             </p>
           </div>
         </div>

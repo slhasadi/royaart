@@ -1,8 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Header from "../components/header";
 import Link from "next/link";
 
 const AboutMe = () => {
+  useEffect(() => {
+    const handleContextmenu = (e: any) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
   return (
     <>
       <Header />
@@ -15,7 +25,7 @@ const AboutMe = () => {
             </h3>
 
             <p className="text-white/70 text-base max-w-xl mx-auto">
-              Showcase of Our Awesome Works in Four Columns
+              Roya Moradkhani
             </p>
           </div>
         </div>
@@ -80,7 +90,7 @@ const AboutMe = () => {
           </div>
         </div>
 
-        <div className="container relative md:mt-24 mt-16">
+        {/* <div className="container relative md:mt-24 mt-16">
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             <div className="group relative lg:px-6 transition duration-500 ease-in-out rounded-xl overflow-hidden text-center">
               <div className="relative overflow-hidden text-transparent -m-3 text-center">
@@ -222,7 +232,7 @@ const AboutMe = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="container relative md:mt-24 mt-16">
           <div className="grid grid-cols-1 text-center">

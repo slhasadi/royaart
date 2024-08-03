@@ -21,6 +21,15 @@ const PortfolioListPage = () => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
+  useEffect(() => {
+    const handleContextmenu = (e: any) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
   return (
     <>
       <Header />
@@ -33,7 +42,7 @@ const PortfolioListPage = () => {
             </h3>
 
             <p className="text-white/70 text-base max-w-xl mx-auto">
-              Showcase of Our Awesome Works in Four Columns
+              Roya Moradkhani
             </p>
           </div>
         </div>
@@ -106,9 +115,6 @@ const PortfolioListPage = () => {
                                   <p className="h6 text-[22px] font-medium hover:text-orange-500 duration-500 ease-in-out text-[#fff]">
                                     {cat.title}
                                   </p>
-                                  {/* <p className="text-slate-400 dark:text-white/60 mb-0">
-                                Abstract
-                              </p> */}
                                 </div>
                               </div>
                             </Link>
@@ -118,6 +124,13 @@ const PortfolioListPage = () => {
                     );
                   })}
                 </Swiper>
+                <div className="mt-7 flex justify-center mb-5">
+                  <Link href={`/portfolio-cat/${item.categoryId}`}>
+                    <span className="bg-[#fff] text-[#000] text-[22px] font-medium px-7 py-3 rounded-full cursor-pointer h-5">
+                      More...
+                    </span>
+                  </Link>
+                </div>
               </div>
             );
           }

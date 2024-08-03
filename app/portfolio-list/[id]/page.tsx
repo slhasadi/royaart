@@ -22,6 +22,15 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
       setSliderList(res.data);
     });
   }, []);
+  useEffect(() => {
+    const handleContextmenu = (e: any) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
   const thumbSlider = () => {
     return (
       <div className="w-full">
@@ -86,7 +95,7 @@ const SinglePortfolio = ({ params }: { params: { id: any } }) => {
             </h3>
 
             <p className="text-white/70 text-base max-w-xl mx-auto">
-              Showcase of Our Awesome Works in Four Columns
+              Roya Moradkhani
             </p>
           </div>
         </div>

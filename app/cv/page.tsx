@@ -1,8 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Header from "../components/header";
 import Link from "next/link";
 
 const Cv = () => {
+  useEffect(() => {
+    const handleContextmenu = (e: any) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
   return (
     <>
       <Header />
@@ -15,7 +25,7 @@ const Cv = () => {
             </h3>
 
             <p className="text-white/70 text-base max-w-xl mx-auto">
-              Showcase of Our Awesome Works in Four Columns
+              Roya Moradkhani
             </p>
           </div>
         </div>
