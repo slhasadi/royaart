@@ -291,6 +291,146 @@ const Cv = () => {
                   2015 Photo group exhibition, city center gallery, Isfahan,
                   Iran
                 </li>
+                <li>
+                  2024 International Art group exhibition and festival,
+                  “Shattered Psyche’s travelling showcase”, Jubilee Catholic Jr.
+                  High school gallery, Ghana, Africa
+                </li>
+                <li>
+                  2024 Artwork Traveling showcase of Shattered Psyches project,
+                  Adugyama Foresight community, Library Adugyama Ashanti, Ghana,
+                  Africa{" "}
+                </li>
+                <li>
+                  2024 Art group exhibition of visual arts and crafts, “Art for
+                  Art”, certificate of DNW Austria company and with the
+                  cooperation of Palette Art Group and Ruma pulse, Austria
+                </li>
+                <li>
+                  2024 Art group exhibition of 2nd Largest virtual Art Educa
+                  contest “World Environment Day”, USA and Spain
+                </li>
+                <li>
+                  2024 AFA’S Exhibition on KREATE.ART, NFT Group exhibition,
+                  Canada and France
+                </li>
+                <li>
+                  2024 Group exhibition of visual arts and crafts, “Roses” with
+                  the cooperation of Palette Art Group, Denmark
+                </li>
+                <li>
+                  2024 Selected in the Talented Winners awards Virginiatown of
+                  the “Colors of Collaboration” Group exhibition, Ontario,
+                  Canada
+                </li>
+                <li>
+                  2024 NFT Art, group exhibition, in the photography category of
+                  the NFTNYC2024, NYC, USA
+                </li>
+                <li>
+                  2023 Group exhibition of visual arts and crafts, “Narratives
+                  on canvas” with the cooperation of Mentativ Art Gallery and
+                  Palette Art Group, Melbourne, Australia
+                </li>
+                <li>
+                  2024 Group exhibition to creatively express the ability to
+                  achieve peace through collaboration, Ontario, Canada
+                </li>
+                <li>
+                  2023 Certificate of acceptance my photo in the Amu Darya 2023
+                  International Exhibition of Photography, FIAP, PSA, Salon
+                  photo, Tajikistan
+                </li>
+                <li>
+                  2023 Group exhibition of visual arts, “Design of the work”,
+                  with the cooperation of Aytist group, AYIMI and ADIB Institute
+                  and Roma pulse group, Mexico
+                </li>
+                <li>
+                  2023 Group exhibition of visual arts, “Symphony of color”,
+                  with the cooperation of Bloom Art society, Roma pulse and
+                  Luminart Art Group, Netherlands
+                </li>
+                <li>
+                  2023 Group exhibition of visual arts, Al-Reyhan institute,
+                  Oman
+                </li>
+                <li>
+                  2023 1st international Group Art exhibition in the art space,
+                  Magma Art, Turkey
+                </li>
+                <li>
+                  2023 Art Talk, my photo collection in a multiculture center in
+                  the November’s “world artists in the spotlight”, Ontario,
+                  Canada
+                </li>
+                <li>2023 Group Art exhibition, Galeri Art’s, Turkey</li>
+                <li>2023 NFT Art, group exhibition, Mondoir Gallery, Dubai</li>
+                <li>
+                  2023 selection my photo in the IOTF international online
+                  theater festival of America for “Opheliation” theater group,
+                  USA
+                </li>
+                <li>
+                  2021 NFT Photography, group exhibition, Aknon art gallery,
+                  Isfahan, Iran
+                </li>
+                <li>
+                  2020 Abstraction Photography, group exhibition, loosen art
+                  gallery, Rome, Italy
+                </li>
+                <li>
+                  2020 Photography, group exhibition, Blue Gallery, Berlin,
+                  Germany
+                </li>
+                <li>
+                  2020 Documentary photography, group exhibition, Theme gallery,
+                  Tehran, Iran
+                </li>
+                <li>
+                  2019 Documentary photography, group exhibition, 14 gallery,
+                  Tehran, Iran
+                </li>
+                <li>
+                  2018 Photo group exhibition, Peace relations between Iran and
+                  Armenia, Art Museum Armenia
+                </li>
+                <li>
+                  2018 Documentary photography, group exhibition, Mellat
+                  Cineplex gallery, Tehran, Iran
+                </li>
+                <li>
+                  2018 Photo and multi-media group exhibition, the
+                  “Environmental force” project, Negaresh Gallery, Isfahan, Iran
+                </li>
+                <li>
+                  2017 Documentary photography, group exhibition, Edeh Parsi
+                  gallery, Tehran, Iran
+                </li>
+                <li>
+                  2017 7th photo group exhibition Photographers Association,
+                  Bayan Gallery, Isfahan, Iran
+                </li>
+                <li>
+                  2017 Photo group exhibition, Mashrouteh House of Isfahan
+                  Gallery, Isfahan, Iran
+                </li>
+                <li>
+                  2017 Photo group exhibition, Nowruz photo, Esfahan Central
+                  Library gallery, Iran
+                </li>
+                <li>
+                  2017 Documentary group exhibition, old house Naeen, Isfahan,
+                  Iran
+                </li>
+                <li>
+                  2017 Documentary group exhibition, old house Naeen, Isfahan,
+                  Iran
+                </li>
+                <li>
+                  2015 Photo group exhibition, city center gallery, Isfahan,
+                  Iran
+                </li>
               </ul>
             </section>
             <section className="mt-16">
@@ -317,6 +457,23 @@ const Cv = () => {
                   Publish a photo on 24 Hours Project web (Woman and humanity
                   title)
                 </li>
+                <li>
+                  NFT project photo print,The 1st Annual collection book 2024,
+                  cultural institute of SAFPEM, France. Canada
+                </li>
+                <li>
+                  Photo printing in the Book of “world Artists in the
+                  Spotlight”, Canada
+                </li>
+                <li>Photo printing in Swap magazine, Berlin Germany</li>
+                <li>Printing in Loosenart magazine, Rome Italy</li>
+                <li>
+                  Print photo in 3rd Kadr magazine (Mobilegraphy title), Iran
+                </li>
+                <li>Photo printing in Ghaab magazine (Wall titled), Iran</li>
+                <li>Photo printing in Ghaab magazine (War title), Iran</li>
+                <li>Photo printing in Ghaab magazine (Free title), Iran</li>
+                <li>Photo printing in Ghaab magazine (Route title), Iran</li>
               </ul>
             </section>
           </div>
